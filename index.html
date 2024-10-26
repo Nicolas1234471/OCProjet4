@@ -20,10 +20,12 @@
             <img src="Assets/images/logo/ohmyfood.png" alt="Logo de la marque Ohmyfood">
         </div>
     </header>
+    <form class="btn__localisation" method="get" action="">
+        <label for="location" class="label__location"><i class="fa-solid fa-location-dot location__icon"></i></label>
+        <input type="location" name="location" id="location" placeholder="Paris, Belleville" class="location__field">
+        </button>
+    </form>
     <main>
-        <form class="form__location" method="get" action="">
-            <input type="search" name="search" id="search" placeholder="Paris, Belleville">
-        </form>
         <section class="introduction">
             <div>
                 <h1>Réservez le menu qui vous convient</h1>
@@ -37,12 +39,21 @@
         <section class="fonctionnement">
             <h1>Fonctionnement</h1>
             <div class="btn__fonctionnement--box">
-                <button type="submit" class="btn__fonctionnement">Choisissez un restaurant
-                </button>
-                <button type="submit" class="btn__fonctionnement">Composez votre menu
-                </button>
-                <button type="submit" class="btn__fonctionnement">Dégustez au restaurant
-                </button>
+                <div class="number__flex">
+                    <div class="number__style">1</div>
+                    <button type="submit" class="btn__fonctionnement"><i class="fa-solid fa-mobile-screen-button icone__fonctionnement"></i>Choisissez un restaurant
+                    </button>
+                </div>
+                <div class="number__flex">
+                    <div class="number__style">2</div>
+                    <button type="submit" class="btn__fonctionnement"><i class="fa-solid fa-list-ul icone__fonctionnement"></i>Composez votre menu
+                    </button>
+                </div>
+                <div class="number__flex">
+                    <div class="number__style">3</div>
+                    <button type="submit" class="btn__fonctionnement"><i class="fa-solid fa-store icone__fonctionnement"></i>Dégustez au restaurant
+                    </button>
+                </div>    
             </div>
         </section>
         <section class="restaurants">
