@@ -1,3 +1,278 @@
+@charset "UTF-8";
+* {
+  font-family: roboto, shrikhand;
+  box-sizing: border-box;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  position: relative;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #F3F3F3;
+}
+
+/****** HEADER ******/
+header {
+  gap: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+header img {
+  height: 36px;
+}
+header .logo__ohmyfood {
+  margin-top: 5px;
+}
+
+.image__restaurant {
+  height: 275px;
+  object-fit: cover;
+}
+
+/****** MENU ******/
+.icone__like {
+  position: relative;
+  padding-right: 10px;
+  /* Checkbox cochée */
+  /* Checkbox décochée */
+}
+.icone__like .hidden {
+  display: none;
+}
+.icone__like .heart--full {
+  background: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  color: transparent;
+  line-height: normal;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  transform-origin: center bottom;
+  position: absolute;
+  cursor: pointer;
+}
+.icone__like .heart--empty {
+  line-height: normal;
+  opacity: 1;
+  transition: opacity 500ms ease;
+  transform-origin: center bottom;
+  cursor: pointer;
+}
+.icone__like input[type=checkbox]:checked ~ .heart--full {
+  opacity: 1;
+  animation: fill-in 500ms ease-in forwards;
+}
+.icone__like input[type=checkbox]:checked ~ .heart--empty {
+  opacity: 0;
+}
+.icone__like input[type=checkbox]:not(:checked) ~ .heart-full {
+  opacity: 0;
+  animation: fill-out 500ms ease-in forwards;
+}
+.icone__like input[type=checkbox]:not(:checked) ~ .heart--empty {
+  opacity: 1;
+}
+
+@keyframes fill-in {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  75% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fill-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 40px;
+  margin-bottom: -55px;
+  position: relative;
+  bottom: 55px;
+  background-color: #F3F3F3;
+  gap: 40px;
+  border-radius: 40px 40px 0px 0px;
+  width: 100%;
+}
+.menu .entrées {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.menu .plats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.menu .desserts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.menu .title__flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu .title__flex h1 {
+  font-family: shrikhand;
+  font-weight: 400;
+  font-size: 28px;
+  margin: 0;
+}
+.menu h2 {
+  font-family: roboto;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom: 3px solid #99E2D0;
+  width: 40px;
+}
+.menu .btn__commander--flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.menu .btn__commander--flex .btn__commander {
+  width: 218px;
+  height: 50px;
+  border: 0px;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC);
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  transition: all 1000ms;
+}
+.menu .btn__commander--flex .btn__commander:hover {
+  opacity: 0.8;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.card__menu {
+  background-color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.2);
+  height: 72px;
+  display: flex;
+  flex-direction: row;
+}
+.card__menu .card__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+.card__menu .card__content .card__txt {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card__menu .card__content .card__price {
+  font-family: roboto;
+  font-weight: 700;
+  font-size: 15px;
+  color: #353535;
+  position: absolute;
+  right: 35px;
+}
+.card__menu .card__content h3 {
+  font-family: roboto;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+.card__menu .card__content p {
+  font-family: roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0;
+}
+
+/******Footer******/
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #353535;
+  padding: 22px 25px 22px 25px;
+  color: white;
+}
+footer h3 {
+  font-family: "Shrikhand";
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 0px;
+}
+footer .footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+footer .footer__links .liens__icones {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  gap: 7px;
+}
+footer .footer__links .liens {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 400;
+  font-size: 16px;
+  gap: 7px;
+}
+footer .footer__links .liens a {
+  text-decoration: none;
+  color: white;
+}
+footer .footer__links .footer__icon {
+  margin-right: 5px;
+}
+footer .footer__links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
 /*# sourceMappingURL=style-menu.css.map */

@@ -1,0 +1,319 @@
+* {
+    font-family: roboto, shrikhand;
+    box-sizing: border-box;
+}
+
+$main-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    position: relative;
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        background-color: #F3F3F3;
+    }
+}
+
+/****** HEADER ******/
+
+header {
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.15);
+    padding-bottom: 12px;
+    padding-top: 12px;
+
+    img {
+        height: 36px;
+    }
+
+    .logo__ohmyfood {
+        margin-top: 5px;
+    }
+}
+
+.image__restaurant {
+    height: 275px;
+    object-fit: cover;
+}
+
+/****** MENU ******/
+
+.icone__like {
+    position: relative;
+    padding-right: 10px;
+    
+    .hidden {
+        display: none;
+    }
+    
+    .heart--full {
+        background: linear-gradient($secondary-color, $main-color);
+        background-clip: text;
+        color: transparent;
+        line-height: normal;
+        opacity: 0;
+        transition: opacity 500ms ease;
+        transform-origin: center bottom;
+        position: absolute;
+        cursor: pointer;
+    }
+    
+    .heart--empty {
+        line-height: normal;
+        opacity: 1;
+        transition: opacity 500ms ease;
+        transform-origin: center bottom;
+        cursor: pointer;
+    }
+    
+        /* Checkbox cochée */
+    input[type="checkbox"]:checked ~ .heart--full {
+        opacity: 1;
+        animation: fill-in 500ms ease-in forwards;
+    }
+    
+    input[type="checkbox"]:checked ~ .heart--empty {
+        opacity: 0;
+    }
+    
+        /* Checkbox décochée */
+    input[type="checkbox"]:not(:checked) ~ .heart-full {
+        opacity: 0;
+        animation: fill-out 500ms ease-in forwards;
+    }
+    
+    input[type="checkbox"]:not(:checked) ~ .heart--empty {
+        opacity: 1;
+    }
+}
+
+@keyframes fill-in {
+    0% {
+        transform: scale(0);
+    }
+
+    25% {
+        transform: scale(0.6);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    75% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fill-out {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+    margin-bottom: -55px;
+    position: relative;
+    bottom: 55px;
+    background-color: #F3F3F3;
+    gap: 40px;
+    border-radius: 40px 40px 0px 0px;
+    width: 100%;
+
+    .entrées {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .plats {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .desserts {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .title__flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            font-family: shrikhand;
+            font-weight: 400;
+            font-size: 28px;
+            margin: 0;
+        }
+    }
+
+    h2 {
+        font-family: roboto;
+        font-weight: 300;
+        font-size: 16px;
+        border-bottom: 3px solid $tertiary-color;
+        width: 40px;
+    }
+
+    .btn__commander--flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    
+        .btn__commander {
+            width: 218px;
+            height: 50px;
+            border: 0px;
+            border-radius: 25px;
+            background: linear-gradient(to bottom, $secondary-color, $main-color);
+            font-weight: 500;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.25);
+            transition: all 1000ms;
+        }
+    
+        .btn__commander:hover {
+            opacity: 0.80;
+            box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.35);
+        }
+    }
+}
+
+.card__menu {
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.2);
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+
+    .card__content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+
+        .card__txt {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .card__price {
+            font-family: roboto;
+            font-weight: 700;
+            font-size: 15px;
+            color: #353535;
+            position: absolute;
+            right: 35px;
+        }
+
+        h3 {
+            font-family: roboto;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        p {
+            font-family: roboto;
+            font-size: 15px;
+            font-weight: 300;
+            margin: 0;
+        }
+    }
+}
+
+/******Footer******/
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #353535;
+    padding: 22px 25px 22px 25px;
+    color: white;
+
+    h3 {
+        font-family: "Shrikhand";
+        font-weight: 400;
+        font-size: 18px;
+        margin-top: 0px;
+    }
+
+    .footer__links {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        .liens__icones {
+            display: flex;
+            flex-direction: column;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: 500;
+            font-size: 16px;
+            gap: 7px;
+        }
+
+        .liens {
+            display: flex;
+            flex-direction: column;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: 400;
+            font-size: 16px;
+            gap: 7px;
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        .footer__icon {
+            margin-right: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
