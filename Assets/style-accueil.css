@@ -4,7 +4,18 @@
   box-sizing: border-box;
 }
 
-#loader {
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+body main {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  animation: content-appear forwards 1s 2s;
+}
+body #loader {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -40,18 +51,6 @@
     opacity: 1;
   }
 }
-body {
-  display: flex;
-  flex-direction: column;
-  margin: 0px;
-}
-body main {
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  animation: content-appear forwards 1s 2s;
-}
-
 /******Header******/
 header {
   opacity: 0;
@@ -375,8 +374,17 @@ header .logo__ohmyfood {
     transform: scale(1);
     opacity: 1;
   }
+  25% {
+    transform: scale(0.75);
+  }
   50% {
     transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.25);
+  }
+  100% {
+    transform: scale(0);
     opacity: 0;
   }
 }
@@ -523,37 +531,6 @@ footer .footer__links ul {
     flex-direction: row;
     gap: 10px;
     padding-right: 30px;
-  }
-}
-@media (min-width: 1024px) {
-  /******Fonctionnement******/
-  .fonctionnement .fonctionnement__flexbox {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-  }
-  .number__flex .number__style {
-    display: flex;
-    position: relative;
-    left: 10px;
-  }
-  .number__flex .fonctionnement__card {
-    width: 335px;
-  }
-  .number__flex .fonctionnement__card .icone__fonctionnement {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    left: -30px;
-  }
-  /******Restaurants******/
-  .restaurants .restaurants__cards {
-    display: flex;
-    flex-flow: row wrap;
-    column-gap: 100px;
-    row-gap: 50px;
   }
 }
 

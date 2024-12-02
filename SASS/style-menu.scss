@@ -5,29 +5,7 @@
 
 $main-color: #9356DC;
 $secondary-color: #FF79DA;
-$tertiary-color: #99E2D0;
-
-@keyframes spin {
-    0% { 
-        transform: rotate(0deg);
-        opacity: 1; 
-    }
-             
-    100% {  
-        transform: rotate(720deg);
-        opacity: 1; 
-    }
-}
-
-  @keyframes content-appear {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}    
+$tertiary-color: #99E2D0; 
 
 body {
     display: flex;
@@ -47,13 +25,41 @@ body {
         border: 16px solid #f3f3f3;
         border-radius: 50%;
         border-top: 16px solid $main-color;
-        animation: spin 2s linear;
+        animation: spin 2s forwards;
     }
 }
+
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg);
+        opacity: 1; 
+    }
+
+    95% {
+        opacity: 1;
+    }
+             
+    100% {  
+        transform: rotate(720deg);
+        opacity: 0;
+        display: none;
+    }
+  }
+
+  @keyframes content-appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}   
 
 /****** HEADER ******/
 
 header {
+    position: relative;
     opacity: 0;
     gap: 15px;
     display: flex;
@@ -72,6 +78,7 @@ header {
     .btn__retour {
         position: absolute;
         left: 17px;
+        top: 25px;
     }    
         
     a {
@@ -172,8 +179,20 @@ header {
         opacity: 1;
     }
 
+    25% {
+        transform: scale(0.75);
+    }
+
     50% {
-        transform: scale(0.5);
+        transform: scale (0.50);
+    }
+
+    75% {
+        transform: scale (0.25);
+    }
+
+    100% {
+        transform: scale (0);
         opacity: 0;
     }
 }

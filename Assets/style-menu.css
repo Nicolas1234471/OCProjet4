@@ -4,24 +4,6 @@
   box-sizing: border-box;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(720deg);
-    opacity: 1;
-  }
-}
-@keyframes content-appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 body {
   display: flex;
   flex-direction: column;
@@ -40,11 +22,34 @@ body #loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #9356DC;
-  animation: spin 2s linear;
+  animation: spin 2s forwards;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(720deg);
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes content-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /****** HEADER ******/
 header {
+  position: relative;
   opacity: 0;
   gap: 15px;
   display: flex;
@@ -62,6 +67,7 @@ header img {
 header .btn__retour {
   position: absolute;
   left: 17px;
+  top: 25px;
 }
 header a {
   color: #353535;
@@ -145,8 +151,17 @@ header .logo__ohmyfood {
     transform: scale(1);
     opacity: 1;
   }
+  25% {
+    transform: scale(0.75);
+  }
   50% {
-    transform: scale(0.5);
+    transform: scale 0.5;
+  }
+  75% {
+    transform: scale 0.25;
+  }
+  100% {
+    transform: scale 0;
     opacity: 0;
   }
 }
