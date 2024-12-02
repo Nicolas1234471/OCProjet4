@@ -26,7 +26,7 @@ body #loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #9356DC;
-  animation: spin forwards 2s;
+  animation: spin 2s forwards;
 }
 
 @keyframes spin {
@@ -87,16 +87,11 @@ header .logo__ohmyfood {
   z-index: 1;
   animation: content-appear forwards 1s 2s;
 }
-.btn__localisation .location__field {
+.btn__localisation p {
   width: 145px;
-  border: 0px;
-  background-color: #EAEAEA;
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
-}
-.btn__localisation input::placeholder {
-  color: #353535;
 }
 
 /******Introduction******/
