@@ -99,7 +99,7 @@ header {
     z-index: 1;
     animation: content-appear forwards 1s 2s;
 
-    p {
+    span {
         width: 145px;
         font-family: Roboto;
         font-weight: 500;
@@ -134,6 +134,9 @@ header {
             margin: 0;
             padding-right: 25px;
             padding-left: 25px;
+            font-weight: 300;
+            font-size: 18px;
+            color: rgba(53, 53, 53, 1);
         }
     }
 
@@ -161,20 +164,11 @@ header {
             box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.35);
         }
     }
-
-    p {
-        font-weight: 300;
-        font-size: 18px;
-        color: rgba(53, 53, 53, 1);
-    }
 }
 
 /******Fonctionnement******/
 .fonctionnement {
     opacity: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-right: 15px;
@@ -189,6 +183,7 @@ header {
 
     h1 {
         padding-left: 10px;
+        padding-bottom: 25px;
     }
 }
 
@@ -236,7 +231,7 @@ header {
         color: rgba(147, 86, 220, 1);
     }
 
-    p {
+    .fonctionnement__txt {
         position: absolute;
         left: 80px;
     }
@@ -245,9 +240,6 @@ header {
 /******Restaurants******/
 .restaurants {
     opacity: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
     background-color: #F3F3F3;
     padding: 50px 10px 50px 10px;
     animation: content-appear forwards 1s 2s;
@@ -266,7 +258,7 @@ header {
     }
 
     h1 {
-        margin: 0;
+        padding-bottom: 20px;
     }
 }
 
@@ -284,14 +276,14 @@ header {
         height: 180px;
     }
 
-    p {
+    .nouveau__tag {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         position: absolute;
-        right: 20px;
-        top: 0px;
+        right: 15px;
+        top: 15px;
         background-color: #99E2D0;
         color: rgba(0, 135, 102, 1);
         width: 80px;
@@ -299,7 +291,9 @@ header {
         font-family: 'Roboto';
         font-weight: 500;
         font-size: 14px;
-        cursor: default;
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.15);
+        border-radius: 2px;
+        cursor: pointer;
     }
 }
 

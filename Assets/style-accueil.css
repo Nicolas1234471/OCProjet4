@@ -87,7 +87,7 @@ header .logo__ohmyfood {
   z-index: 1;
   animation: content-appear forwards 1s 2s;
 }
-.btn__localisation p {
+.btn__localisation span {
   width: 145px;
   font-family: Roboto;
   font-weight: 500;
@@ -120,6 +120,9 @@ header .logo__ohmyfood {
   margin: 0;
   padding-right: 25px;
   padding-left: 25px;
+  font-weight: 300;
+  font-size: 18px;
+  color: rgb(53, 53, 53);
 }
 .introduction .btn__restaurants--flex {
   display: flex;
@@ -143,18 +146,10 @@ header .logo__ohmyfood {
   opacity: 0.8;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
-.introduction p {
-  font-weight: 300;
-  font-size: 18px;
-  color: rgb(53, 53, 53);
-}
 
 /******Fonctionnement******/
 .fonctionnement {
   opacity: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
   padding-top: 50px;
   padding-bottom: 50px;
   padding-right: 15px;
@@ -168,6 +163,7 @@ header .logo__ohmyfood {
 }
 .fonctionnement h1 {
   padding-left: 10px;
+  padding-bottom: 25px;
 }
 
 .fonctionnement__card {
@@ -211,7 +207,7 @@ header .logo__ohmyfood {
 .fonctionnement__card .card__icon--purple {
   color: rgb(147, 86, 220);
 }
-.fonctionnement__card p {
+.fonctionnement__card .fonctionnement__txt {
   position: absolute;
   left: 80px;
 }
@@ -219,9 +215,6 @@ header .logo__ohmyfood {
 /******Restaurants******/
 .restaurants {
   opacity: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
   background-color: #F3F3F3;
   padding: 50px 10px 50px 10px;
   animation: content-appear forwards 1s 2s;
@@ -238,7 +231,7 @@ header .logo__ohmyfood {
   width: 100%;
 }
 .restaurants h1 {
-  margin: 0;
+  padding-bottom: 20px;
 }
 
 .card {
@@ -254,14 +247,14 @@ header .logo__ohmyfood {
   border-radius: 15px 15px 0px 0px;
   height: 180px;
 }
-.card p {
+.card .nouveau__tag {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 20px;
-  top: 0px;
+  right: 15px;
+  top: 15px;
   background-color: #99E2D0;
   color: rgb(0, 135, 102);
   width: 80px;
@@ -269,7 +262,9 @@ header .logo__ohmyfood {
   font-family: "Roboto";
   font-weight: 500;
   font-size: 14px;
-  cursor: default;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .card__content {

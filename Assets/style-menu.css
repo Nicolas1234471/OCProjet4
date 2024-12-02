@@ -338,7 +338,7 @@ header .logo__ohmyfood {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.card__menu .card__content p {
+.card__menu .card__content span {
   font-family: roboto;
   font-size: 15px;
   font-weight: 300;
