@@ -63,7 +63,7 @@ header .btn__retour {
   position: absolute;
   left: 17px;
 }
-header .btn__retour a {
+header a {
   color: #353535;
   text-decoration: none;
 }
