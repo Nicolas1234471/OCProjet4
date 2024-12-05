@@ -4,27 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  margin: 0px;
-  position: relative;
-}
-body #loader {
-  opacity: 0;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 120px;
-  height: 120px;
-  margin: -76px 0 0 -76px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #9356DC;
-  animation: spin 2s forwards;
-}
-
+/******KEYFRAMES******/
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -47,6 +27,61 @@ body #loader {
     opacity: 1;
   }
 }
+@keyframes fill-in {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  75% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fill-out {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.75);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.25);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  position: relative;
+}
+body #loader {
+  opacity: 0;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #9356DC;
+  animation: spin 2s forwards;
+}
+
 /****** HEADER ******/
 header {
   position: relative;
@@ -89,12 +124,7 @@ header .logo__ohmyfood {
 /****** MENU ******/
 .icone__like {
   position: relative;
-  padding-right: 20px;
-  /* Checkbox cochée */
-  /* Checkbox décochée */
-}
-.icone__like .hidden {
-  display: none;
+  padding-right: 30px;
 }
 .icone__like .heart--full {
   background: linear-gradient(#FF79DA, #9356DC);
@@ -114,65 +144,23 @@ header .logo__ohmyfood {
   transform-origin: center bottom;
   cursor: pointer;
 }
-.icone__like input[type=checkbox]:checked ~ .heart--full {
-  opacity: 1;
+
+.icone__like:hover .heart--full {
   animation: fill-in 500ms ease-in forwards;
+  opacity: 1;
 }
-.icone__like input[type=checkbox]:checked ~ .heart--empty {
+.icone__like:hover .heart--empty {
   opacity: 0;
 }
-.icone__like input[type=checkbox]:not(:checked) ~ .heart-full {
-  opacity: 0;
+
+.icone__like:not(:hover) .heart--full {
   animation: fill-out 500ms ease-in forwards;
+  opacity: 0;
 }
-.icone__like input[type=checkbox]:not(:checked) ~ .heart--empty {
+.icone__like:not(:hover) .heart--empty {
   opacity: 1;
 }
 
-@keyframes fill-in {
-  0% {
-    transform: scale(0);
-  }
-  25% {
-    transform: scale(0.6);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  75% {
-    transform: scale(1.25);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes fill-out {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  25% {
-    transform: scale(0.75);
-  }
-  50% {
-    transform: scale 0.5;
-  }
-  75% {
-    transform: scale 0.25;
-  }
-  100% {
-    transform: scale 0;
-    opacity: 0;
-  }
-}
-@keyframes menu-appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .menu {
   opacity: 0;
   display: flex;
@@ -199,7 +187,7 @@ header .logo__ohmyfood {
   width: 100%;
   max-width: 634px;
   margin: auto;
-  animation: menu-appear forwards 1000ms 2000ms;
+  animation: content-appear forwards 1000ms 2000ms;
 }
 .menu .plats {
   opacity: 0;
@@ -209,7 +197,7 @@ header .logo__ohmyfood {
   width: 100%;
   max-width: 634px;
   margin: auto;
-  animation: menu-appear forwards 1000ms 3000ms;
+  animation: content-appear forwards 1000ms 3000ms;
 }
 .menu .desserts {
   opacity: 0;
@@ -219,7 +207,7 @@ header .logo__ohmyfood {
   width: 100%;
   max-width: 634px;
   margin: auto;
-  animation: menu-appear forwards 1000ms 4000ms;
+  animation: content-appear forwards 1000ms 4000ms;
 }
 .menu .title__flex {
   display: flex;
@@ -264,6 +252,7 @@ header .logo__ohmyfood {
 }
 
 .card__menu {
+  position: relative;
   background-color: #FFFFFF;
   border: 0px solid #FFFFFF;
   border-radius: 15px;
@@ -276,30 +265,23 @@ header .logo__ohmyfood {
   align-items: center;
   position: relative;
 }
-.card__menu .label__checkbox {
-  width: 100%;
-  cursor: pointer;
-}
-.card__menu .label__checkbox .hidden {
-  display: none;
-}
-.card__menu .label__checkbox input:checked + .card__content {
-  padding-right: 45px;
-}
-.card__menu .label__checkbox input:checked + .card__content .card__price {
-  right: 65px;
-}
-.card__menu .label__checkbox input:checked + .card__content .check__background {
-  width: 55px;
+.card__menu .check__animation {
+  position: relative;
+  border-radius: 0px 15px 15px 0px;
+  width: 0;
   height: 100%;
+  background-color: #99E2D0;
+  transition: width 500ms ease;
+  z-index: 0;
 }
-.card__menu .label__checkbox input:not(checked) + .card__content .check__background {
-  width: 0%;
-  height: 100%;
-}
-.card__menu .label__checkbox input:checked + .card__content .check__menu {
-  right: 3px;
-  opacity: 1;
+.card__menu .check__animation .check--icon {
+  background-color: white;
+  color: #99E2D0;
+  border-radius: 50%;
+  font-size: 24px;
+  position: relative;
+  left: 14px;
+  top: 24px;
 }
 .card__menu .card__content {
   display: flex;
@@ -310,13 +292,13 @@ header .logo__ohmyfood {
   padding: 15px;
   width: 100%;
   position: relative;
-  transition: padding-right 0.3s ease-in-out;
+  transition: width 500ms ease;
 }
 .card__menu .card__content .card__txt {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  max-width: calc(100% - 60px);
+  max-width: calc(100% - 55px);
   flex-grow: 1;
 }
 .card__menu .card__content .card__price {
@@ -327,7 +309,6 @@ header .logo__ohmyfood {
   position: absolute;
   right: 15px;
   bottom: 15px;
-  transition: right 0.2s ease-in-out;
 }
 .card__menu .card__content h3 {
   font-family: roboto;
@@ -347,33 +328,12 @@ header .logo__ohmyfood {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.card__menu .card__content .check__background {
-  position: absolute;
-  right: -30px;
-  width: 0;
-  height: 100%;
-  background-color: #99E2D0;
-  transform: translateX(-50%);
-  transform-origin: right;
-  transition: width 0.2s ease-in-out;
-  z-index: 1;
+
+.card__menu:hover .check__animation {
+  width: 55px;
 }
-.card__menu .card__content .check__menu {
-  position: absolute;
-  right: -40px;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: right 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-}
-.card__menu .card__content .check__menu i {
-  font-size: 24px;
-  color: #99E2D0;
-  background-color: white;
-  border-radius: 50%;
+.card__menu:hover .card__content {
+  width: calc(100% - 54px);
 }
 
 /******Footer******/
@@ -440,6 +400,9 @@ footer .footer__links ul {
     flex-direction: row;
     justify-content: center;
     gap: 20px;
+  }
+  .menu .title__flex .icone__like {
+    padding-right: 0px;
   }
   footer {
     display: flex;

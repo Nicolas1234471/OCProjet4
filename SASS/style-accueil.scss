@@ -7,32 +7,7 @@ $main-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 
-body {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-
-    main {
-        opacity: 0;
-        display: flex;
-        flex-direction: column;
-        animation: content-appear forwards 1s 2s;
-    }
-
-    #loader {
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        z-index: 1;
-        width: 120px;
-        height: 120px;
-        margin: -76px 0 0 -76px;
-        border: 16px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 16px solid $main-color;
-        animation: spin 2s forwards;
-      }
-}
+/******KEYFRAMES******/
 
 @keyframes spin {
     0% { 
@@ -59,6 +34,77 @@ body {
     100% {
         opacity: 1;
     }
+}
+
+@keyframes fill-in {
+    0% {
+        transform: scale(0);
+    }
+
+    25% {
+        transform: scale(0.6);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    75% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fill-out {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(0.75);
+    }
+
+    50% {
+        transform: scale(0.50);
+    }
+
+    75% {
+        transform: scale(0.25);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+
+    main {
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        animation: content-appear forwards 1s 2s;
+    }
+
+    #loader {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        width: 120px;
+        height: 120px;
+        margin: -76px 0 0 -76px;
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid $main-color;
+        animation: spin 2s forwards;
+      }
 }
 
 /******Header******/
@@ -335,7 +381,7 @@ header {
 
 .icone__like {
     position: relative;
-    padding-right: 20px;
+    right: 20px;
     
     .heart--full {
         background: linear-gradient($secondary-color, $main-color);
@@ -371,6 +417,7 @@ header {
 }
 
 .icone__like:not(:hover) {
+
     .heart--full {
         animation: fill-out 500ms ease-in forwards;
         opacity: 0;
@@ -378,50 +425,6 @@ header {
 
     .heart--empty {
         opacity: 1;
-    }
-}
-
-@keyframes fill-in {
-    0% {
-        transform: scale(0);
-    }
-
-    25% {
-        transform: scale(0.6);
-    }
-
-    50% {
-        transform: scale(1.5);
-    }
-
-    75% {
-        transform: scale(1.25);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes fill-out {
-    0% {
-        transform: scale(1);
-    }
-
-    25% {
-        transform: scale(0.75);
-    }
-
-    50% {
-        transform: scale(0.50);
-    }
-
-    75% {
-        transform: scale(0.25);
-    }
-
-    100% {
-        transform: scale(0);
     }
 }
 
