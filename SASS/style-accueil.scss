@@ -337,10 +337,6 @@ header {
     position: relative;
     padding-right: 20px;
     
-    .hidden {
-        display: none;
-    }
-    
     .heart--full {
         background: linear-gradient($secondary-color, $main-color);
         background-clip: text;
@@ -360,24 +356,27 @@ header {
         transform-origin: center bottom;
         cursor: pointer;
     }
-    
-    /* Checkbox cochée */
-    input[type="checkbox"]:checked ~ .heart--full {
-        opacity: 1;
+}
+
+.icone__like:hover {
+
+    .heart--full {
         animation: fill-in 500ms ease-in forwards;
+        opacity: 1;
     }
-    
-    input[type="checkbox"]:checked ~ .heart--empty {
+
+    .heart--empty {
         opacity: 0;
     }
-    
-        /* Checkbox décochée */
-    input[type="checkbox"]:not(:checked) ~ .heart-full {
-        opacity: 0;
+}
+
+.icone__like:not(:hover) {
+    .heart--full {
         animation: fill-out 500ms ease-in forwards;
+        opacity: 0;
     }
-    
-    input[type="checkbox"]:not(:checked) ~ .heart--empty {
+
+    .heart--empty {
         opacity: 1;
     }
 }
@@ -407,7 +406,6 @@ header {
 @keyframes fill-out {
     0% {
         transform: scale(1);
-        opacity: 1;
     }
 
     25% {
@@ -424,7 +422,6 @@ header {
 
     100% {
         transform: scale(0);
-        opacity: 0;
     }
 }
 
