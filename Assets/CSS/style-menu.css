@@ -86,6 +86,7 @@ body #loader {
 header {
   position: relative;
   opacity: 0;
+  height: 63px;
   gap: 15px;
   display: flex;
   flex-direction: row;
@@ -102,7 +103,7 @@ header img {
 header .btn__retour {
   position: absolute;
   left: 17px;
-  top: 25px;
+  top: 23px;
 }
 header a {
   color: #353535;
@@ -110,6 +111,7 @@ header a {
 }
 header .logo__ohmyfood {
   margin-top: 5px;
+  padding-right: 10px;
 }
 
 .image__restaurant {
@@ -251,6 +253,13 @@ header .logo__ohmyfood {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
+.card__menu:hover .check__animation {
+  width: 55px;
+}
+.card__menu:hover .card__content {
+  width: calc(100% - 54px);
+}
+
 .card__menu {
   position: relative;
   background-color: #FFFFFF;
@@ -329,13 +338,6 @@ header .logo__ohmyfood {
   text-overflow: ellipsis;
 }
 
-.card__menu:hover .check__animation {
-  width: 55px;
-}
-.card__menu:hover .card__content {
-  width: calc(100% - 54px);
-}
-
 /******Footer******/
 footer {
   opacity: 0;
@@ -392,6 +394,13 @@ footer .footer__links ul {
 
 /******RESPONSIVE******/
 @media (min-width: 768px) {
+  header {
+    height: 96px;
+  }
+  header .btn__retour {
+    position: absolute;
+    top: 38px;
+  }
   .image__restaurant {
     height: 383px;
   }
