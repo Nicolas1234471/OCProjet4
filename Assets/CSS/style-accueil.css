@@ -4,6 +4,65 @@
   box-sizing: border-box;
 }
 
+/******KEYFRAMES******/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(720deg);
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes content-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fill-in {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  75% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fill-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.75);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.25);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
 body {
   display: flex;
   flex-direction: column;
@@ -29,28 +88,6 @@ body #loader {
   animation: spin 2s forwards;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(720deg);
-    opacity: 0;
-    display: none;
-  }
-}
-@keyframes content-appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 /******Header******/
 header {
   opacity: 0;
@@ -302,7 +339,7 @@ header .logo__ohmyfood {
 
 .icone__like {
   position: relative;
-  padding-right: 20px;
+  right: 20px;
   /* Checkbox cochée */
   /* Checkbox décochée */
 }
@@ -315,7 +352,7 @@ header .logo__ohmyfood {
   color: transparent;
   line-height: normal;
   opacity: 0;
-  transition: opacity 500ms ease;
+  transition: opacity 0.5s ease;
   transform-origin: center bottom;
   position: absolute;
   cursor: pointer;
@@ -323,61 +360,25 @@ header .logo__ohmyfood {
 .icone__like .heart--empty {
   line-height: normal;
   opacity: 1;
-  transition: opacity 500ms ease;
+  transition: opacity 0.5s ease;
   transform-origin: center bottom;
   cursor: pointer;
 }
 .icone__like input[type=checkbox]:checked ~ .heart--full {
   opacity: 1;
-  animation: fill-in 500ms ease-in forwards;
+  animation: fill-in 0.5s ease-in forwards;
 }
 .icone__like input[type=checkbox]:checked ~ .heart--empty {
   opacity: 0;
 }
 .icone__like input[type=checkbox]:not(:checked) ~ .heart-full {
   opacity: 0;
-  animation: fill-out 500ms ease-in forwards;
+  animation: fill-out 0.5s ease-in forwards;
 }
 .icone__like input[type=checkbox]:not(:checked) ~ .heart--empty {
   opacity: 1;
 }
 
-@keyframes fill-in {
-  0% {
-    transform: scale(0);
-  }
-  25% {
-    transform: scale(0.6);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  75% {
-    transform: scale(1.25);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes fill-out {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  25% {
-    transform: scale(0.75);
-  }
-  50% {
-    transform: scale(0.5);
-  }
-  75% {
-    transform: scale(0.25);
-  }
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
 /******Footer******/
 footer {
   opacity: 0;
