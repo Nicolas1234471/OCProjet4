@@ -318,7 +318,7 @@ header .logo__ohmyfood {
   flex-direction: column;
   padding-left: 20px;
 }
-.card__content .card__txt .restaurant__title {
+.card__content .card__txt h2 {
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: Roboto;
@@ -326,7 +326,7 @@ header .logo__ohmyfood {
   font-size: 18px;
   color: black;
 }
-.card__content .card__txt .restaurant__adresse {
+.card__content .card__txt span {
   font-weight: 300;
   font-size: 17px;
   color: black;

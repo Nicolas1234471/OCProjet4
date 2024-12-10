@@ -360,7 +360,7 @@ header {
         flex-direction: column;
         padding-left: 20px;
 
-        .restaurant__title {
+        h2 {
             margin-top: 0px;
             margin-bottom: 0px;
             font-family: Roboto;
@@ -369,7 +369,7 @@ header {
             color: black;
         }
 
-        .restaurant__adresse {
+        span {
             font-weight: 300;
             font-size: 17px;
             color: black;
