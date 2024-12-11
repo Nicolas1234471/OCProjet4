@@ -217,6 +217,17 @@ header {
     margin: auto;
     animation: content-appear forwards 1s 2s;
 
+    .card__menu:hover {
+    
+        .check__animation {
+            width: 55px;
+        }
+    
+        .card__content {
+            width: calc(100% - 54px);
+        }
+    }
+
     .entrées {
         opacity: 0;
         display: flex;
@@ -295,17 +306,6 @@ header {
             opacity: 0.80;
             box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.35);
         }
-    }
-}
-
-.card__menu:hover {
-    
-    .check__animation {
-        width: 55px;
-    }
-
-    .card__content {
-        width: calc(100% - 54px);
     }
 }
 

@@ -181,6 +181,12 @@ header .logo__ohmyfood {
   margin: auto;
   animation: content-appear forwards 1s 2s;
 }
+.menu .card__menu:hover .check__animation {
+  width: 55px;
+}
+.menu .card__menu:hover .card__content {
+  width: calc(100% - 54px);
+}
 .menu .entrées {
   opacity: 0;
   display: flex;
@@ -251,13 +257,6 @@ header .logo__ohmyfood {
 .menu .btn__commander--flex .btn__commander:hover {
   opacity: 0.8;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
-}
-
-.card__menu:hover .check__animation {
-  width: 55px;
-}
-.card__menu:hover .card__content {
-  width: calc(100% - 54px);
 }
 
 .card__menu {
