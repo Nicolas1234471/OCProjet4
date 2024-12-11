@@ -153,18 +153,18 @@ header .logo__ohmyfood {
   transform-origin: center bottom;
   cursor: pointer;
 }
-.icone__like input[type=checkbox]:checked ~ .heart--full {
+.icone__like input[type=checkbox]:checked .heart--full {
   opacity: 1;
   animation: fill-in 0.5s ease-in forwards;
 }
-.icone__like input[type=checkbox]:checked ~ .heart--empty {
+.icone__like input[type=checkbox]:checked .heart--empty {
   opacity: 0;
 }
-.icone__like input[type=checkbox]:not(:checked) ~ .heart-full {
+.icone__like input[type=checkbox]:not(:checked) .heart-full {
   opacity: 0;
   animation: fill-out 0.5s ease-in forwards;
 }
-.icone__like input[type=checkbox]:not(:checked) ~ .heart--empty {
+.icone__like input[type=checkbox]:not(:checked) .heart--empty {
   opacity: 1;
 }
 
