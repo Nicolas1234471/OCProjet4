@@ -186,7 +186,7 @@ header .logo__ohmyfood {
   margin: auto;
   animation: content-appear forwards 1s 2s;
 }
-.menu .entrées {
+.menu .entrees {
   opacity: 0;
   display: flex;
   flex-direction: column;
